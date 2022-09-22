@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/custom-widgets/small-button.dart';
-import 'package:test_layout/screens/video-lessons/video-lesson.dart';
+import 'package:test_layout/widgets/small_button.dart';
+import 'package:test_layout/screens/video-lessons/video_lesson.dart';
 
 class VideoLessons extends StatefulWidget {
   const VideoLessons({Key? key}) : super(key: key);
@@ -45,6 +45,18 @@ class _VideoLessonsState extends State<VideoLessons> {
                   SmallButton(buttonText: 'позновательное', enabled: false),
                 ],
               ),
+              actions: <Widget>[
+                IconButton(
+                  icon: const Icon(
+                    Icons.search,
+                    size: 24,
+                  ),
+                  tooltip: 'Open search bar',
+                  onPressed: () {
+                    // handle the press
+                  },
+                ),
+              ],
             ),
             body: ListView(
               padding: const EdgeInsets.all(15),

@@ -1,7 +1,8 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
+import 'package:test_layout/styles/text_styles.dart';
 
-import 'package:test_layout/custom-widgets/custom-button.dart';
+import 'package:test_layout/widgets/custom_button.dart';
 
 class TestDialog extends StatelessWidget {
   const TestDialog({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class TestDialog extends StatelessWidget {
           const Text(
             'Вы уверены что хотите начать тест?',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+            style: kTextStyle22,
           ),
           const SizedBox(
             height: 12,

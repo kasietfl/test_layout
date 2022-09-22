@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/colors.dart';
+import 'package:test_layout/styles/colors.dart';
 
 class SmallButton extends StatelessWidget {
   final bool enabled;

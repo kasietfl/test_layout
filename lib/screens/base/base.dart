@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/screens/base/base-item.dart';
+import 'package:test_layout/styles/text_styles.dart';
+import 'package:test_layout/screens/base/base_item.dart';
 
 class Base extends StatefulWidget {
   const Base({Key? key}) : super(key: key);
@@ -13,11 +14,7 @@ class _BaseState extends State<Base> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('База',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w700,
-            )),
+        title: const Text('База', style: kTextStyle24),
         elevation: 0,
         foregroundColor: Colors.black,
         backgroundColor: Colors.transparent,

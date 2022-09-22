@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/colors.dart';
-import 'package:test_layout/screens/sales/search-bar.dart';
-import 'package:test_layout/screens/sales/date-modal.dart';
-import 'package:test_layout/screens/sales/product-modal.dart';
+import 'package:test_layout/styles/colors.dart';
+import 'package:test_layout/screens/sales/search_bar.dart';
+import 'package:test_layout/screens/sales/date_modal.dart';
+import 'package:test_layout/screens/sales/product_modal.dart';
 
 class Sales extends StatefulWidget {
   const Sales({super.key});
@@ -12,6 +12,18 @@ class Sales extends StatefulWidget {
 }
 
 class _SalesState extends State<Sales> {
+  List<String> products = [
+    'Аскорбиновая кислота',
+    'Азитромицин',
+    'Азитромицин Экспресс',
+    'Актитропил',
+    'Аллохол',
+    'Альтевир',
+    'Амоксициллин',
+    'Анальгин (таблетки)',
+    'Анальгин-ЭкстраКап',
+    'Артрозан'
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +32,7 @@ class _SalesState extends State<Sales> {
           elevation: 0,
           title: IntrinsicHeight(
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Column(
@@ -88,86 +101,49 @@ class _SalesState extends State<Sales> {
           ),
         ),
         body: SafeArea(
-          minimum: const EdgeInsets.all(15.0),
+          // minimum: const EdgeInsets.all(15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SearchBar(),
-              const SizedBox(
-                height: 22,
+              const Divider(
+                thickness: 16,
+                color: lightGray2,
               ),
               Expanded(
-                  child: ListView(children: const [
-                ProductItem(
-                  title: 'Аскорбиновая кислота',
-                ),
-                ProductItem(
-                  title: 'Азитромицин',
-                ),
-                ProductItem(
-                  title: 'Азитромицин Экспресс ',
-                ),
-                ProductItem(
-                  title: 'Актитропил',
-                ),
-                ProductItem(
-                  title: 'Аллохол',
-                ),
-                ProductItem(
-                  title: 'Альтевир',
-                ),
-                ProductItem(
-                  title: 'Амоксициллин',
-                ),
-                ProductItem(
-                  title: 'Анальгин (таблетки)',
-                ),
-                ProductItem(
-                  title: 'Анальгин-ЭкстраКап',
-                ),
-                ProductItem(
-                  title: 'Артрозан',
-                ),
-              ]))
+                child: ListView.builder(
+                    itemCount: products.length,
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                          onTap: () {
+                            showModalBottomSheet<void>(
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.vertical(
+                                  top: Radius.circular(16.0),
+                                ),
+                              ),
+                              isScrollControlled: true,
+                              backgroundColor: Colors.white,
+                              context: context,
+                              builder: (BuildContext context) {
+                                return ProductModal(text: products[index]);
+                              },
+                            );
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(16),
+                            decoration: const BoxDecoration(
+                                border: Border(
+                                    bottom: BorderSide(
+                              color: lightGray2,
+                            ))),
+                            child: Text(products[index],
+                                style: const TextStyle(fontSize: 15)),
+                          ));
+                    }),
+              ),
             ],
           ),
         ));
-  }
-}
-
-class ProductItem extends StatelessWidget {
-  final String title;
-  const ProductItem({Key? key, required this.title}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        showModalBottomSheet<void>(
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              top: Radius.circular(16.0),
-            ),
-          ),
-          isScrollControlled: true,
-          backgroundColor: Colors.white,
-          context: context,
-          builder: (BuildContext context) {
-            return const ProductModal();
-          },
-        );
-      },
-      child: Container(
-          decoration: const BoxDecoration(
-              border: Border(
-                  bottom: BorderSide(
-            color: lightGray2,
-          ))),
-          padding: const EdgeInsets.all(16),
-          child: Text(
-            title,
-            style: const TextStyle(fontSize: 15),
-          )),
-    );
   }
 }

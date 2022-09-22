@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'package:test_layout/screens/test-screen/test-dialog.dart';
+import 'package:test_layout/screens/test-screen/test_dialog.dart';
 
 class Test extends StatelessWidget {
   final String heading;
   final String description;
-  final int amount;
-  const Test(
-      {required this.heading, required this.description, required this.amount});
+  const Test({
+    super.key,
+    required this.heading,
+    required this.description,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,14 +42,14 @@ class Test extends StatelessWidget {
             children: [
               const Button(),
               Column(
-                children: [
-                  const Text(
+                children: const [
+                  Text(
                     'Тест прошли',
                     style: TextStyle(fontSize: 12, color: Color(0xff5E626E)),
                   ),
                   Text(
-                    '$amount чел.',
-                    style: const TextStyle(
+                    '54 чел.',
+                    style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                         color: Color(0xff18191C)),
@@ -80,6 +82,7 @@ class Button extends StatelessWidget {
       onPressed: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => const AlertDialog(
+          insetPadding: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(15.0))),
           content: TestDialog(),

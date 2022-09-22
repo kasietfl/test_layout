@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/screens/test-screen/test.dart';
+import 'package:test_layout/screens/test-screen/test_item.dart';
 
 class Tests extends StatefulWidget {
   const Tests({super.key});
@@ -22,6 +22,18 @@ class _TestsState extends State<Tests> {
               )),
           centerTitle: true,
           foregroundColor: Colors.black,
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(
+                Icons.search,
+                size: 24,
+              ),
+              tooltip: 'Open search bar',
+              onPressed: () {
+                // handle the press
+              },
+            ),
+          ],
         ),
         body: ListView(
           padding: const EdgeInsets.all(15),
@@ -30,7 +42,6 @@ class _TestsState extends State<Tests> {
               heading: 'На знание новинок для провизоров и фармацевтов',
               description:
                   'Проверьте свои профессиональные знания, ответив на 11 непростых вопросов',
-              amount: 54,
             ),
             SizedBox(
               height: 12,
@@ -39,7 +50,6 @@ class _TestsState extends State<Tests> {
               heading: 'Онлайн-тест: препараты при аллергии',
               description:
                   'Проверьте свои знания фармакологии антигистаминных лекарственных средств, ответив на 15 вопросов',
-              amount: 54,
             ),
             SizedBox(
               height: 12,
@@ -48,7 +58,6 @@ class _TestsState extends State<Tests> {
               heading: 'На знание новинок для провизоров и фармацевтов',
               description:
                   'Проверьте свои профессиональные знания, ответив на 11 непростых вопросов',
-              amount: 54,
             ),
             SizedBox(
               height: 12,
@@ -57,9 +66,15 @@ class _TestsState extends State<Tests> {
               heading: 'На знание новинок для провизоров и фармацевтов',
               description:
                   'Проверьте свои профессиональные знания, ответив на 11 непростых вопросов',
-              amount: 54,
             ),
           ],
         ));
   }
+}
+
+class TestList {
+  final String heading;
+  final String description;
+
+  TestList({required this.heading, required this.description});
 }

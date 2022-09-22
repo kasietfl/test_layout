@@ -11,3 +11,4 @@ const gray5 = Color(0xffD6D7DC);
 const lightGray = Color(0xffE3E4E8);
 const lightGray2 = Color(0xffF1F2F3);
 const white = Color(0xffffffff);
+const blue = Color(0xff0050B3);

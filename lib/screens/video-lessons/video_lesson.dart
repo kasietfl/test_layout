@@ -6,7 +6,7 @@ class VideoLesson extends StatelessWidget {
   final String buttonText;
   final Color buttonColor;
   const VideoLesson(
-      {Key? key,
+      {super.key,
       required this.title,
       required this.backgroundImage,
       required this.buttonText,

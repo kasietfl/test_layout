@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:test_layout/colors.dart';
+import 'package:test_layout/styles/colors.dart';
 
 import 'package:test_layout/screens/sales/sales.dart';
 import 'package:test_layout/screens/news/news.dart';
 import 'package:test_layout/screens/base/base.dart';
 import 'package:test_layout/screens/test-screen/tests.dart';
-import 'package:test_layout/screens/video-lessons/video-lessons.dart';
-import 'package:test_layout/screens/news/inner-news.dart';
-import 'package:test_layout/screens/test-screen/inner-test.dart';
+import 'package:test_layout/screens/video-lessons/video_lessons.dart';
+import 'package:test_layout/screens/news/inner_news.dart';
+import 'package:test_layout/screens/test-screen/inner_test.dart';
+import 'package:test_layout/screens/test-screen/result.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -22,7 +23,8 @@ void main() {
         '/video': (context) => const VideoLessons(),
         '/tests': (context) => const Tests(),
         '/innernews': (context) => const InnerNews(),
-        '/innertest': (context) => const InnerTest()
+        '/innertest': (context) => const InnerTest(),
+        '/result': (context) => const Result()
       }));
 }
 

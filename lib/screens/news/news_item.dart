@@ -29,11 +29,17 @@ class NewsItem extends StatelessWidget {
             Row(children: [
               Row(children: const [
                 Image(image: AssetImage('assets/images/emoji-1.png')),
+                SizedBox(
+                  width: 4,
+                ),
                 Text('10')
               ]),
               const Padding(padding: EdgeInsets.only(left: 24)),
               Row(children: const [
                 Image(image: AssetImage('assets/images/emoji-2.png')),
+                SizedBox(
+                  width: 4,
+                ),
                 Text('10')
               ])
             ])
