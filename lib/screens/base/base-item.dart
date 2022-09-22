@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class BaseItem extends StatelessWidget {
   final String title;
@@ -12,18 +13,16 @@ class BaseItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(8),
-      child: InkWell(
-        onTap: () {
-          Navigator.pushNamed(context, '/$section');
-        },
+    return InkWell(
+      onTap: () => Navigator.pushNamed(context, '/$section'),
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.all(8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 30),
-            Image(image: AssetImage('assets/$image.png')),
+            SvgPicture.asset('assets/svg/$image.svg'),
             const SizedBox(height: 10),
             Text(
               title,

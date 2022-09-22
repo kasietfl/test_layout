@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/custom-widgets/button.dart';
+
+import 'package:test_layout/screens/test-screen/test-dialog.dart';
 
 class Test extends StatelessWidget {
   final String heading;
@@ -37,7 +38,7 @@ class Test extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Button(),
+              const Button(),
               Column(
                 children: [
                   const Text(
@@ -56,6 +57,41 @@ class Test extends StatelessWidget {
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class Button extends StatelessWidget {
+  const Button({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton(
+      style: ButtonStyle(
+        fixedSize: MaterialStateProperty.all(const Size(190, 48)),
+        side: MaterialStateProperty.all(const BorderSide(
+            color: Color(0xff006648), width: 2.0, style: BorderStyle.solid)),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50),
+        )),
+      ),
+      onPressed: () => showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => const AlertDialog(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(15.0))),
+          content: TestDialog(),
+        ),
+      ),
+      child: const Text(
+        'Начать тест',
+        style: TextStyle(
+          color: Color(0xff006648),
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+        ),
       ),
     );
   }

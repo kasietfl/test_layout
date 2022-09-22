@@ -23,7 +23,8 @@ class _NewsState extends State<News> {
         backgroundColor: Colors.transparent,
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 35),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
+        // itemExtent: 130,
         children: const <Widget>[
           NewsItem(
             date: '19 сентября',

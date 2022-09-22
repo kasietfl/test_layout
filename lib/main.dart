@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:test_layout/colors.dart';
 
 import 'package:test_layout/screens/sales/sales.dart';
 import 'package:test_layout/screens/news/news.dart';
@@ -6,18 +8,21 @@ import 'package:test_layout/screens/base/base.dart';
 import 'package:test_layout/screens/test-screen/tests.dart';
 import 'package:test_layout/screens/video-lessons/video-lessons.dart';
 import 'package:test_layout/screens/news/inner-news.dart';
+import 'package:test_layout/screens/test-screen/inner-test.dart';
 
 void main() {
   runApp(MaterialApp(
       theme: ThemeData(
           fontFamily: 'NotoSans', backgroundColor: const Color(0xffffffff)),
+      debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
         '/': (context) => const Main(),
         '/base': (context) => const Base(),
         '/video': (context) => const VideoLessons(),
         '/tests': (context) => const Tests(),
-        '/innernews': ((context) => const InnerNews())
+        '/innernews': (context) => const InnerNews(),
+        '/innertest': (context) => const InnerTest()
       }));
 }
 
@@ -41,26 +46,51 @@ class _MainState extends State<Main> {
         onTap: (index) => setState(() => currentIndex = index),
         type: BottomNavigationBarType.fixed,
         iconSize: 24,
-        selectedItemColor: const Color.fromRGBO(0, 102, 72, 1),
-        unselectedItemColor: const Color.fromRGBO(186, 188, 196, 1),
+        selectedItemColor: green,
+        unselectedItemColor: gray4,
         unselectedLabelStyle: const TextStyle(fontSize: 12),
         selectedLabelStyle: const TextStyle(fontSize: 12),
         showUnselectedLabels: true,
-        items: const <BottomNavigationBarItem>[
+        elevation: 5,
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage('assets/bag-2.png')),
+            icon: SvgPicture.asset(
+              'assets/svg/bag.svg',
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/svg/bag.svg',
+              color: green,
+            ),
             label: 'Продажи',
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage('assets/note.png')),
+            icon: SvgPicture.asset(
+              'assets/svg/news.svg',
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/svg/news.svg',
+              color: green,
+            ),
             label: 'Новости',
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage('assets/folder.png')),
+            icon: SvgPicture.asset(
+              'assets/svg/base.svg',
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/svg/base.svg',
+              color: green,
+            ),
             label: 'База',
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage('assets/frame.png')),
+            icon: SvgPicture.asset(
+              'assets/svg/profile.svg',
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/svg/profile.svg',
+              color: green,
+            ),
             label: 'Профиль',
           ),
         ],

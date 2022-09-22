@@ -20,7 +20,7 @@ class VideoLesson extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(20, 70, 20, 24),
         decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/$backgroundImage.png'),
+              image: AssetImage('assets/images/$backgroundImage.png'),
               fit: BoxFit.cover,
             ),
             borderRadius: const BorderRadius.all(Radius.circular(12))),

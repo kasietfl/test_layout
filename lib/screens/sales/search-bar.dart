@@ -6,10 +6,19 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      // obscureText: true,
       decoration: InputDecoration(
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
-          labelText: 'Password',
+          hintText: 'Поиск препаратов',
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(50),
+            borderSide: const BorderSide(color: Color(0xffececef)),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(50),
+            borderSide: const BorderSide(color: Color(0xffececef)),
+          ),
+          filled: true,
+          fillColor: const Color(0xffececef),
+          contentPadding: const EdgeInsets.all(2.0),
           prefixIcon: const Icon(Icons.search)),
     );
   }

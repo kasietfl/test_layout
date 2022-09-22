@@ -15,11 +15,12 @@ class _BaseState extends State<Base> {
       appBar: AppBar(
         title: const Text('База',
             style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-                color: Colors.black)),
-        elevation: 1,
-        backgroundColor: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.w700,
+            )),
+        elevation: 0,
+        foregroundColor: Colors.black,
+        backgroundColor: Colors.transparent,
       ),
       body: GridView.count(
         primary: false,
