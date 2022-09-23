@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_layout/styles/colors.dart';
+import 'package:test_layout/styles/text_styles.dart';
 import 'package:test_layout/widgets/custom_button.dart';
 
 class InnerTest extends StatefulWidget {
@@ -22,7 +23,7 @@ class _InnerTestState extends State<InnerTest> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: white,
         appBar: AppBar(
           title: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -39,30 +40,35 @@ class _InnerTestState extends State<InnerTest> {
           ),
           centerTitle: true,
           backgroundColor: Colors.transparent,
-          foregroundColor: Colors.black,
+          foregroundColor: black,
           elevation: 0,
         ),
         body: Column(
           children: [
-            const Divider(
-              color: green,
-              thickness: 2,
-            ),
+            Container(
+                height: 2,
+                decoration: const BoxDecoration(
+                  color: lightGray2,
+                ),
+                child: const Divider(
+                  color: green,
+                  endIndent: 330,
+                  thickness: 2,
+                )),
             Expanded(
-              child: Container(
+              child: Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
                 child: Column(
                   children: <Widget>[
+                    const Image(
+                        image: AssetImage('assets/images/inner-test.png')),
                     const SizedBox(
-                      height: 10,
+                      height: 20,
                     ),
                     const Text(
                       'Какой орган эндокринной системы вырабатывает глюкокортикостероиды?',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: kTextStyle20,
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(
@@ -123,7 +129,7 @@ class _InnerTestState extends State<InnerTest> {
                                       ),
                                       Text(
                                         testOptions[index].text,
-                                        style: const TextStyle(fontSize: 16),
+                                        style: kTextStyle16,
                                       ),
                                     ]),
                                   ),

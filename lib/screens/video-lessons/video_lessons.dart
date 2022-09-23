@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/widgets/small_button.dart';
+import 'package:test_layout/styles/colors.dart';
 import 'package:test_layout/screens/video-lessons/video_lesson.dart';
+import 'package:test_layout/styles/text_styles.dart';
 
 class VideoLessons extends StatefulWidget {
   const VideoLessons({Key? key}) : super(key: key);
@@ -17,32 +18,54 @@ class _VideoLessonsState extends State<VideoLessons> {
         length: 4,
         child: Scaffold(
             appBar: AppBar(
-              foregroundColor: Colors.black,
+              foregroundColor: black,
               title: const Text(
                 'Видео уроки',
-                style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.black),
+                style: kTextStyle18,
               ),
               centerTitle: true,
               backgroundColor: Colors.transparent,
               elevation: 0,
-              bottom: const TabBar(
-                padding: EdgeInsets.symmetric(horizontal: 11),
-                indicatorPadding: EdgeInsets.zero,
-                labelPadding: EdgeInsets.symmetric(horizontal: 4),
-                indicatorColor: Colors.transparent,
-                labelColor: Color(0xff000000),
+              bottom: TabBar(
+                overlayColor: MaterialStateProperty.all(Colors.transparent),
+                // controller: _tabController,
+                padding: const EdgeInsets.symmetric(horizontal: 11),
+                indicatorPadding: const EdgeInsets.all(8),
+                indicator: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: green,
+                ),
+                indicatorSize: TabBarIndicatorSize.tab,
+                labelPadding: const EdgeInsets.symmetric(horizontal: 14),
+                labelStyle: const TextStyle(
+                  color: gray,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                ),
+                indicatorColor: gray,
+                labelColor: white,
+                unselectedLabelColor: gray,
                 isScrollable: true,
                 tabs: <Widget>[
-                  SmallButton(
-                    buttonText: 'Все',
-                    enabled: true,
+                  Tab(
+                    text: 'Все'.toUpperCase(),
                   ),
-                  SmallButton(buttonText: 'Вебинары', enabled: false),
-                  SmallButton(buttonText: 'обучение', enabled: false),
-                  SmallButton(buttonText: 'позновательное', enabled: false),
+                  Tab(
+                    text: 'Вебинары'.toUpperCase(),
+                  ),
+                  Tab(
+                    text: 'обучение'.toUpperCase(),
+                  ),
+                  Tab(
+                    text: 'позновательное'.toUpperCase(),
+                  )
+                  // SmallButton(
+                  //   buttonText: 'Все',
+                  //   enabled: true,
+                  // ),
+                  // SmallButton(buttonText: 'Вебинары', enabled: false),
+                  // SmallButton(buttonText: 'обучение', enabled: false),
+                  // SmallButton(buttonText: 'позновательное', enabled: false),
                 ],
               ),
               actions: <Widget>[
@@ -52,9 +75,7 @@ class _VideoLessonsState extends State<VideoLessons> {
                     size: 24,
                   ),
                   tooltip: 'Open search bar',
-                  onPressed: () {
-                    // handle the press
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),

@@ -9,14 +9,15 @@ class ResultDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 550,
+      height: 480,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SvgPicture.asset('assets/svg/test2.svg'),
           const SizedBox(
-            height: 24,
+            height: 77,
           ),
+          SvgPicture.asset('assets/svg/test2.svg'),
+          const Spacer(),
           CustomButton(
             buttonText: 'Понятно',
             enabled: true,
@@ -25,7 +26,7 @@ class ResultDialog extends StatelessWidget {
             },
           ),
           const SizedBox(
-            height: 10,
+            height: 40,
           ),
         ],
       ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:test_layout/styles/colors.dart';
 
+import '../styles/text_styles.dart';
+
 class CustomButton extends StatelessWidget {
   final bool enabled;
   final String buttonText;
@@ -28,10 +30,8 @@ class CustomButton extends StatelessWidget {
           ))),
       child: Text(
         buttonText,
-        style: TextStyle(
-            color: enabled ? white : gray,
-            fontSize: 16,
-            fontWeight: FontWeight.w600),
+        style: kTextStyle16.copyWith(
+            color: enabled ? white : gray, fontWeight: FontWeight.w600),
       ),
     );
   }

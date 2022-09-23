@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_layout/styles/colors.dart';
 import 'package:test_layout/styles/text_styles.dart';
 import 'package:test_layout/screens/news/news_item.dart';
 
@@ -32,12 +33,31 @@ class _NewsState extends State<News> {
           elevation: 0,
           backgroundColor: Colors.transparent,
         ),
-        body: ListView.builder(
-            itemCount: newsList.length,
-            itemBuilder: (context, index) {
-              return NewsItem(
-                  date: newsList[index].date, title: newsList[index].title);
-            }));
+        body: Column(
+          children: [
+            const Divider(
+              color: lightGray2,
+              thickness: 1,
+            ),
+            Expanded(
+              child: ListView.builder(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  itemCount: newsList.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        NewsItem(
+                            date: newsList[index].date,
+                            title: newsList[index].title),
+                        const SizedBox(
+                          height: 12,
+                        )
+                      ],
+                    );
+                  }),
+            ),
+          ],
+        ));
   }
 }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_layout/styles/colors.dart';
 import 'package:test_layout/styles/text_styles.dart';
 import 'package:test_layout/screens/base/base_item.dart';
 
@@ -16,35 +17,45 @@ class _BaseState extends State<Base> {
       appBar: AppBar(
         title: const Text('База', style: kTextStyle24),
         elevation: 0,
-        foregroundColor: Colors.black,
+        foregroundColor: black,
         backgroundColor: Colors.transparent,
       ),
-      body: GridView.count(
-        primary: false,
-        padding: const EdgeInsets.all(20),
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-        crossAxisCount: 2,
-        children: const <Widget>[
-          BaseItem(
-            title: 'Видео уроки',
-            section: 'video',
-            image: 'video',
+      body: Column(
+        children: [
+          const Divider(
+            color: lightGray2,
+            thickness: 1,
           ),
-          BaseItem(
-            title: 'Схема применения',
-            section: 'video',
-            image: 'task',
-          ),
-          BaseItem(
-            title: 'Тесты',
-            section: 'tests',
-            image: 'video',
-          ),
-          BaseItem(
-            title: 'Инструкции',
-            section: 'video',
-            image: 'video',
+          Expanded(
+            child: GridView.count(
+              primary: false,
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 36),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              children: const <Widget>[
+                BaseItem(
+                  title: 'Видео уроки',
+                  section: 'video',
+                  image: 'video',
+                ),
+                BaseItem(
+                  title: 'Схема применения',
+                  section: 'video',
+                  image: 'task',
+                ),
+                BaseItem(
+                  title: 'Тесты',
+                  section: 'tests',
+                  image: 'video',
+                ),
+                BaseItem(
+                  title: 'Инструкции',
+                  section: 'video',
+                  image: 'video',
+                ),
+              ],
+            ),
           ),
         ],
       ),

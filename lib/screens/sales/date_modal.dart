@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_layout/styles/text_styles.dart';
 import 'package:test_layout/widgets/custom_button.dart';
 import 'package:test_layout/styles/colors.dart';
 
@@ -33,16 +34,19 @@ class _DateModalState extends State<DateModal> {
             const SizedBox(
               height: 12,
             ),
-            const Text(
+            Text(
               'Выбрать дату',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              style: kTextStyle18.copyWith(fontWeight: FontWeight.w500),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
-            Expanded(
-                child: ListView.builder(
+            Column(
+              children: [
+                ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     itemExtent: 40,
                     itemCount: days.length,
+                    shrinkWrap: true,
                     itemBuilder: ((context, index) {
                       return InkWell(
                         onTap: () {
@@ -58,8 +62,7 @@ class _DateModalState extends State<DateModal> {
                           children: [
                             Text(
                               days[index].text,
-                              style: TextStyle(
-                                  fontSize: 16,
+                              style: kTextStyle16.copyWith(
                                   color: days[index].enabled ? black : gray3),
                             ),
                             days[index].enabled
@@ -71,23 +74,32 @@ class _DateModalState extends State<DateModal> {
                           ],
                         ),
                       );
-                    }))),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text(
-                  'Выбрать дату',
-                  style: TextStyle(fontSize: 16, color: blue),
-                ),
-                Icon(
-                  Icons.calendar_today_outlined,
-                  color: blue,
+                    })),
+                InkWell(
+                  onTap: () {},
+                  child: SizedBox(
+                    height: 40,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Выбрать дату',
+                          style: kTextStyle16.copyWith(color: blue),
+                        ),
+                        const Icon(
+                          Icons.calendar_today_outlined,
+                          color: blue,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
+            const Spacer(),
             CustomButton(buttonText: 'Отмена', enabled: false, function: () {}),
             const SizedBox(
-              height: 20,
+              height: 9,
             )
           ],
         ));

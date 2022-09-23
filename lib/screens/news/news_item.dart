@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_layout/styles/colors.dart';
+import 'package:test_layout/styles/text_styles.dart';
 
 class NewsItem extends StatelessWidget {
   final String date;
@@ -18,12 +20,12 @@ class NewsItem extends StatelessWidget {
           children: [
             Text(
               date,
-              style: const TextStyle(fontSize: 12, color: Color(0xff5E626E)),
+              style: const TextStyle(fontSize: 12, color: gray2),
             ),
             const Padding(padding: EdgeInsets.only(top: 12)),
             Text(
               title,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              style: kTextStyle18.copyWith(fontWeight: FontWeight.w600),
             ),
             const Padding(padding: EdgeInsets.only(top: 16)),
             Row(children: [

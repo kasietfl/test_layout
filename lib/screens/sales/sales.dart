@@ -3,6 +3,7 @@ import 'package:test_layout/styles/colors.dart';
 import 'package:test_layout/screens/sales/search_bar.dart';
 import 'package:test_layout/screens/sales/date_modal.dart';
 import 'package:test_layout/screens/sales/product_modal.dart';
+import 'package:test_layout/styles/text_styles.dart';
 
 class Sales extends StatefulWidget {
   const Sales({super.key});
@@ -57,15 +58,13 @@ class _SalesState extends State<Sales> {
                                 }),
                           }),
                       child: Row(
-                        children: const [
+                        children: [
                           Text(
                             'Сегодня',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: green),
+                            style: kTextStyle16.copyWith(
+                                fontWeight: FontWeight.w600, color: green),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.arrow_drop_down,
                             color: green,
                           ),
@@ -79,8 +78,8 @@ class _SalesState extends State<Sales> {
                   endIndent: 8,
                 ),
                 Column(
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       'Продажи',
                       style: TextStyle(
                           fontSize: 14,
@@ -89,10 +88,8 @@ class _SalesState extends State<Sales> {
                     ),
                     Text(
                       '73 единиц',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: green),
+                      style: kTextStyle16.copyWith(
+                          fontWeight: FontWeight.w600, color: green),
                     )
                   ],
                 )
@@ -100,50 +97,47 @@ class _SalesState extends State<Sales> {
             ),
           ),
         ),
-        body: SafeArea(
-          // minimum: const EdgeInsets.all(15.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SearchBar(),
-              const Divider(
-                thickness: 16,
-                color: lightGray2,
-              ),
-              Expanded(
-                child: ListView.builder(
-                    itemCount: products.length,
-                    itemBuilder: (context, index) {
-                      return InkWell(
-                          onTap: () {
-                            showModalBottomSheet<void>(
-                              shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.vertical(
-                                  top: Radius.circular(16.0),
-                                ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SearchBar(),
+            const Divider(
+              thickness: 16,
+              color: lightGray2,
+            ),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: products.length,
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                        onTap: () {
+                          showModalBottomSheet<void>(
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(16.0),
                               ),
-                              isScrollControlled: true,
-                              backgroundColor: Colors.white,
-                              context: context,
-                              builder: (BuildContext context) {
-                                return ProductModal(text: products[index]);
-                              },
-                            );
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.all(16),
-                            decoration: const BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(
-                              color: lightGray2,
-                            ))),
-                            child: Text(products[index],
-                                style: const TextStyle(fontSize: 15)),
-                          ));
-                    }),
-              ),
-            ],
-          ),
+                            ),
+                            isScrollControlled: true,
+                            backgroundColor: Colors.white,
+                            context: context,
+                            builder: (BuildContext context) {
+                              return ProductModal(text: products[index]);
+                            },
+                          );
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(16),
+                          decoration: const BoxDecoration(
+                              border: Border(
+                                  bottom: BorderSide(
+                            color: lightGray2,
+                          ))),
+                          child: Text(products[index],
+                              style: const TextStyle(fontSize: 15)),
+                        ));
+                  }),
+            ),
+          ],
         ));
   }
 }

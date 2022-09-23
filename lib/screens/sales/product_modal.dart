@@ -64,7 +64,7 @@ class _ProductModalState extends State<ProductModal> {
                                 BorderRadius.all(Radius.circular(50))),
                         child: Text(
                           '$count упаковка',
-                          style: const TextStyle(fontSize: 16),
+                          style: kTextStyle16,
                         ),
                       ),
                       RoundButton(
@@ -104,7 +104,7 @@ class RoundButton extends StatelessWidget {
         padding:
             MaterialStateProperty.all<EdgeInsets>(const EdgeInsets.all(10)),
         elevation: MaterialStateProperty.all<double>(0),
-        backgroundColor: MaterialStateProperty.all(Colors.black),
+        backgroundColor: MaterialStateProperty.all(black),
         shape: MaterialStateProperty.all(const CircleBorder()),
       ),
       onPressed: counter,

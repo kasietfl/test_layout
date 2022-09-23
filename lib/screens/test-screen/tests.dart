@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_layout/screens/test-screen/test_item.dart';
+import 'package:test_layout/styles/text_styles.dart';
 
 class Tests extends StatefulWidget {
   const Tests({super.key});
@@ -9,19 +10,39 @@ class Tests extends StatefulWidget {
 }
 
 class _TestsState extends State<Tests> {
+  List<TestList> testList = [
+    TestList(
+      heading: 'На знание новинок для провизоров и фармацевтов',
+      description:
+          'Проверьте свои профессиональные знания, ответив на 11 непростых вопросов',
+    ),
+    TestList(
+      heading: 'Онлайн-тест: препараты при аллергии',
+      description:
+          'Проверьте свои знания фармакологии антигистаминных лекарственных средств, ответив на 15 вопросов',
+    ),
+    TestList(
+      heading: 'На знание новинок для провизоров и фармацевтов',
+      description:
+          'Проверьте свои профессиональные знания, ответив на 11 непростых вопросов',
+    ),
+    TestList(
+      heading: 'На знание новинок для провизоров и фармацевтов',
+      description:
+          'Проверьте свои профессиональные знания, ответив на 11 непростых вопросов',
+    ),
+  ];
+
+  get black => null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          title: const Text('Тесты',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-              )),
+          title: const Text('Тесты', style: kTextStyle18),
           centerTitle: true,
-          foregroundColor: Colors.black,
+          foregroundColor: black,
           actions: <Widget>[
             IconButton(
               icon: const Icon(
@@ -35,40 +56,22 @@ class _TestsState extends State<Tests> {
             ),
           ],
         ),
-        body: ListView(
-          padding: const EdgeInsets.all(15),
-          children: const <Widget>[
-            Test(
-              heading: 'На знание новинок для провизоров и фармацевтов',
-              description:
-                  'Проверьте свои профессиональные знания, ответив на 11 непростых вопросов',
-            ),
-            SizedBox(
-              height: 12,
-            ),
-            Test(
-              heading: 'Онлайн-тест: препараты при аллергии',
-              description:
-                  'Проверьте свои знания фармакологии антигистаминных лекарственных средств, ответив на 15 вопросов',
-            ),
-            SizedBox(
-              height: 12,
-            ),
-            Test(
-              heading: 'На знание новинок для провизоров и фармацевтов',
-              description:
-                  'Проверьте свои профессиональные знания, ответив на 11 непростых вопросов',
-            ),
-            SizedBox(
-              height: 12,
-            ),
-            Test(
-              heading: 'На знание новинок для провизоров и фармацевтов',
-              description:
-                  'Проверьте свои профессиональные знания, ответив на 11 непростых вопросов',
-            ),
-          ],
-        ));
+        body: ListView.builder(
+            padding: const EdgeInsets.all(15),
+            itemCount: testList.length,
+            itemBuilder: (context, index) {
+              return Column(
+                children: [
+                  Test(
+                    heading: testList[index].heading,
+                    description: testList[index].description,
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  )
+                ],
+              );
+            }));
   }
 }
 

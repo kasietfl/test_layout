@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_layout/styles/colors.dart';
+import 'package:test_layout/styles/text_styles.dart';
 
 class VideoLesson extends StatelessWidget {
   final String title;
@@ -32,10 +34,7 @@ class VideoLesson extends StatelessWidget {
           const Padding(padding: EdgeInsets.only(top: 10)),
           Text(
             title,
-            style: const TextStyle(
-                color: Color(0xffffffff),
-                fontSize: 18,
-                fontWeight: FontWeight.w700),
+            style: kTextStyle18.copyWith(color: white),
           ),
         ]));
   }

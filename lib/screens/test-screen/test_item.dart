@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:test_layout/screens/test-screen/test_dialog.dart';
+import 'package:test_layout/styles/colors.dart';
+import 'package:test_layout/styles/text_styles.dart';
 
 class Test extends StatelessWidget {
   final String heading;
@@ -14,7 +16,6 @@ class Test extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 230,
       width: double.infinity,
       padding: const EdgeInsets.fromLTRB(20, 38, 20, 30),
       decoration: const BoxDecoration(
@@ -26,15 +27,12 @@ class Test extends StatelessWidget {
         children: <Widget>[
           Text(
             heading,
-            style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
-                color: Color(0xff18191C)),
+            style: kTextStyle18,
           ),
           const Padding(padding: EdgeInsets.only(top: 10)),
           Text(
             description,
-            style: const TextStyle(color: Color(0xff5E626E), fontSize: 14),
+            style: const TextStyle(color: gray2, fontSize: 14),
           ),
           const Padding(padding: EdgeInsets.only(top: 16)),
           Row(
@@ -45,14 +43,11 @@ class Test extends StatelessWidget {
                 children: const [
                   Text(
                     'Тест прошли',
-                    style: TextStyle(fontSize: 12, color: Color(0xff5E626E)),
+                    style: TextStyle(fontSize: 12, color: gray2),
                   ),
                   Text(
                     '54 чел.',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0xff18191C)),
+                    style: kTextStyle18,
                   )
                 ],
               )
@@ -73,7 +68,7 @@ class Button extends StatelessWidget {
       style: ButtonStyle(
         fixedSize: MaterialStateProperty.all(const Size(190, 48)),
         side: MaterialStateProperty.all(const BorderSide(
-            color: Color(0xff006648), width: 2.0, style: BorderStyle.solid)),
+            color: green, width: 2.0, style: BorderStyle.solid)),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(50),
@@ -82,17 +77,16 @@ class Button extends StatelessWidget {
       onPressed: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => const AlertDialog(
-          insetPadding: EdgeInsets.zero,
+          insetPadding: EdgeInsets.all(15),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(15.0))),
           content: TestDialog(),
         ),
       ),
-      child: const Text(
+      child: Text(
         'Начать тест',
-        style: TextStyle(
-          color: Color(0xff006648),
-          fontSize: 16,
+        style: kTextStyle16.copyWith(
+          color: green,
           fontWeight: FontWeight.w600,
         ),
       ),

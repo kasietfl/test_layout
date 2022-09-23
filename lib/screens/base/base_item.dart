@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:test_layout/styles/colors.dart';
+import 'package:test_layout/styles/text_styles.dart';
 
 class BaseItem extends StatelessWidget {
   final String title;
@@ -17,7 +19,7 @@ class BaseItem extends StatelessWidget {
       onTap: () => Navigator.pushNamed(context, '/$section'),
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(12),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -26,11 +28,11 @@ class BaseItem extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               title,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+              style: kTextStyle18,
             ),
             const SizedBox(height: 6),
             const Text('Краткое описание данного раздела',
-                style: TextStyle(color: Color(0xff5E626E), fontSize: 14))
+                style: TextStyle(color: gray2, fontSize: 14))
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_layout/styles/text_styles.dart';
 import 'package:test_layout/widgets/custom_button.dart';
 import 'package:test_layout/styles/colors.dart';
 import 'package:test_layout/screens/test-screen/result_dialog.dart';
@@ -12,13 +13,9 @@ class Result extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: const Text('Ваш результат',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w700,
-            )),
+        title: const Text('Ваш результат', style: kTextStyle18),
         centerTitle: true,
-        foregroundColor: Colors.black,
+        foregroundColor: black,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
@@ -29,21 +26,18 @@ class Result extends StatelessWidget {
               height: 80,
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: const Color(0xff006648).withOpacity(0.1),
+                  color: green.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(12.0)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
+                children: [
+                  const Text(
                     'Правильных:',
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
                   ),
                   Text(
                     '50',
-                    style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w700,
-                        color: green),
+                    style: kTextStyle24.copyWith(color: green),
                   )
                 ],
               ),
@@ -56,6 +50,7 @@ class Result extends StatelessWidget {
                   showDialog<String>(
                     context: context,
                     builder: (BuildContext context) => const AlertDialog(
+                      insetPadding: EdgeInsets.all(15),
                       shape: RoundedRectangleBorder(
                           borderRadius:
                               BorderRadius.all(Radius.circular(15.0))),
@@ -63,9 +58,6 @@ class Result extends StatelessWidget {
                     ),
                   );
                 }),
-            const SizedBox(
-              height: 20,
-            )
           ],
         ),
       ),

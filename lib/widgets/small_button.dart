@@ -13,9 +13,6 @@ class SmallButton extends StatelessWidget {
       onPressed: () {},
       style: ButtonStyle(
           elevation: MaterialStateProperty.all<double>(0),
-          // minimumSize:
-          //     MaterialStateProperty.all(const Size(double.infinity, 38)),
-
           backgroundColor: MaterialStateProperty.all(
             enabled ? green : lightGray2,
           ),

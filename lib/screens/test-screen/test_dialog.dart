@@ -18,10 +18,10 @@ class TestDialog extends StatelessWidget {
           const SizedBox(
             height: 24,
           ),
-          const Text(
+          Text(
             'Вы уверены что хотите начать тест?',
             textAlign: TextAlign.center,
-            style: kTextStyle22,
+            style: kTextStyle22.copyWith(fontWeight: FontWeight.w700),
           ),
           const SizedBox(
             height: 12,
