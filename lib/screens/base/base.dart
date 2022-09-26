@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/styles/colors.dart';
-import 'package:test_layout/styles/text_styles.dart';
-import 'package:test_layout/screens/base/base_item.dart';
+import 'package:test_layout/imports.dart';
 
 class Base extends StatefulWidget {
   const Base({Key? key}) : super(key: key);

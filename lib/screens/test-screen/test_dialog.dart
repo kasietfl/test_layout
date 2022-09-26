@@ -1,8 +1,6 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
-import 'package:test_layout/styles/text_styles.dart';
-
-import 'package:test_layout/widgets/custom_button.dart';
+import 'package:test_layout/imports.dart';
 
 class TestDialog extends StatelessWidget {
   const TestDialog({Key? key}) : super(key: key);
@@ -26,10 +24,10 @@ class TestDialog extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
-          const Text(
+          Text(
             'У вас будет только одна попытка пройти тест, повторно вы сможете пройти только через 7 дней.',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 15, height: 1.6),
+            style: kTextStyle15.copyWith(height: 1.6),
           ),
           const SizedBox(
             height: 34,

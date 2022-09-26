@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/styles/colors.dart';
-import 'package:test_layout/screens/sales/search_bar.dart';
-import 'package:test_layout/screens/sales/date_modal.dart';
-import 'package:test_layout/screens/sales/product_modal.dart';
-import 'package:test_layout/styles/text_styles.dart';
+import 'package:test_layout/imports.dart';
 
 class Sales extends StatefulWidget {
   const Sales({super.key});
@@ -38,12 +34,10 @@ class _SalesState extends State<Sales> {
               children: [
                 Column(
                   children: [
-                    const Text(
+                    Text(
                       'Выбрать дату',
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300,
-                          color: gray2),
+                      style: kTextStyle14.copyWith(
+                          fontWeight: FontWeight.w300, color: gray2),
                     ),
                     InkWell(
                       onTap: (() => {
@@ -79,12 +73,10 @@ class _SalesState extends State<Sales> {
                 ),
                 Column(
                   children: [
-                    const Text(
+                    Text(
                       'Продажи',
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300,
-                          color: gray2),
+                      style: kTextStyle14.copyWith(
+                          fontWeight: FontWeight.w300, color: gray2),
                     ),
                     Text(
                       '73 единиц',
@@ -118,7 +110,7 @@ class _SalesState extends State<Sales> {
                               ),
                             ),
                             isScrollControlled: true,
-                            backgroundColor: Colors.white,
+                            backgroundColor: white,
                             context: context,
                             builder: (BuildContext context) {
                               return ProductModal(text: products[index]);
@@ -132,8 +124,7 @@ class _SalesState extends State<Sales> {
                                   bottom: BorderSide(
                             color: lightGray2,
                           ))),
-                          child: Text(products[index],
-                              style: const TextStyle(fontSize: 15)),
+                          child: Text(products[index], style: kTextStyle15),
                         ));
                   }),
             ),

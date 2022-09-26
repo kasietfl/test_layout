@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/screens/test-screen/test_item.dart';
-import 'package:test_layout/styles/text_styles.dart';
+import 'package:test_layout/imports.dart';
 
 class Tests extends StatefulWidget {
   const Tests({super.key});
@@ -42,7 +41,7 @@ class _TestsState extends State<Tests> {
           elevation: 0,
           title: const Text('Тесты', style: kTextStyle18),
           centerTitle: true,
-          foregroundColor: black,
+          foregroundColor: Colors.black,
           actions: <Widget>[
             IconButton(
               icon: const Icon(

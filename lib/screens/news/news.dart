@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/styles/colors.dart';
-import 'package:test_layout/styles/text_styles.dart';
-import 'package:test_layout/screens/news/news_item.dart';
+import 'package:test_layout/imports.dart';
 
 class News extends StatefulWidget {
   const News({super.key});
@@ -28,7 +26,7 @@ class _NewsState extends State<News> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          foregroundColor: Colors.black,
+          foregroundColor: black,
           title: const Text('Новости', style: kTextStyle24),
           elevation: 0,
           backgroundColor: Colors.transparent,

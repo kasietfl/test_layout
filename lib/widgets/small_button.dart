@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/styles/colors.dart';
+import 'package:test_layout/imports.dart';
 
 class SmallButton extends StatelessWidget {
   final bool enabled;
@@ -22,10 +22,8 @@ class SmallButton extends StatelessWidget {
           ))),
       child: Text(
         buttonText.toUpperCase(),
-        style: TextStyle(
-            color: enabled ? white : gray,
-            fontSize: 14,
-            fontWeight: FontWeight.w700),
+        style: kTextStyle14.copyWith(
+            color: enabled ? white : gray, fontWeight: FontWeight.w700),
       ),
     );
   }

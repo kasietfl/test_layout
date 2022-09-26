@@ -38,7 +38,7 @@ const kTextStyle16 = TextStyle(
 
 const kTextStyle15 = TextStyle(
   fontSize: 15.0,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w400,
   color: black,
   fontFamily: "NotoSans",
 );
@@ -52,7 +52,7 @@ const kTextStyle14 = TextStyle(
 
 const kTextStyle12 = TextStyle(
   fontSize: 12.0,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.w400,
   color: black,
   fontFamily: "NotoSans",
 );

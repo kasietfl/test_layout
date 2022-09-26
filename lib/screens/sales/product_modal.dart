@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/styles/colors.dart';
-import 'package:test_layout/styles/text_styles.dart';
-import 'package:test_layout/widgets/custom_button.dart';
+import 'package:test_layout/imports.dart';
 
 class ProductModal extends StatefulWidget {
   final String text;

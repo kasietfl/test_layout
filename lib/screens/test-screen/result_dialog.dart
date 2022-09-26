@@ -9,7 +9,7 @@ class ResultDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 480,
+      height: 460,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -22,7 +22,7 @@ class ResultDialog extends StatelessWidget {
             buttonText: 'Понятно',
             enabled: true,
             function: () {
-              Navigator.pop(context);
+              Navigator.of(context).popUntil(ModalRoute.withName('/tests'));
             },
           ),
           const SizedBox(

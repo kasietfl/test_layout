@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:test_layout/screens/test-screen/test_dialog.dart';
-import 'package:test_layout/styles/colors.dart';
-import 'package:test_layout/styles/text_styles.dart';
+import 'package:test_layout/imports.dart';
 
 class Test extends StatelessWidget {
   final String heading;
@@ -40,12 +37,12 @@ class Test extends StatelessWidget {
             children: [
               const Button(),
               Column(
-                children: const [
+                children: [
                   Text(
                     'Тест прошли',
-                    style: TextStyle(fontSize: 12, color: gray2),
+                    style: kTextStyle12.copyWith(color: gray2),
                   ),
-                  Text(
+                  const Text(
                     '54 чел.',
                     style: kTextStyle18,
                   )

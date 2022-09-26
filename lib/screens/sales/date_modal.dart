@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/styles/text_styles.dart';
-import 'package:test_layout/widgets/custom_button.dart';
-import 'package:test_layout/styles/colors.dart';
+import 'package:test_layout/imports.dart';
 
 class DateModal extends StatefulWidget {
   const DateModal({Key? key}) : super(key: key);
@@ -22,7 +20,7 @@ class _DateModalState extends State<DateModal> {
   Widget build(BuildContext context) {
     return Container(
         padding: const EdgeInsets.all(15),
-        height: MediaQuery.of(context).size.height * 0.9,
+        height: MediaQuery.of(context).size.height * 0.94,
         child: Column(
           children: <Widget>[
             Container(

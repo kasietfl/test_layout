@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:test_layout/styles/colors.dart';
-import 'package:test_layout/styles/text_styles.dart';
+import 'package:test_layout/imports.dart';
 
 class BaseItem extends StatelessWidget {
   final String title;
@@ -31,8 +30,10 @@ class BaseItem extends StatelessWidget {
               style: kTextStyle18,
             ),
             const SizedBox(height: 6),
-            const Text('Краткое описание данного раздела',
-                style: TextStyle(color: gray2, fontSize: 14))
+            Text('Краткое описание данного раздела',
+                style: kTextStyle14.copyWith(
+                  color: gray2,
+                ))
           ],
         ),
       ),

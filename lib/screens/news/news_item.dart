@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/styles/colors.dart';
-import 'package:test_layout/styles/text_styles.dart';
+import 'package:test_layout/imports.dart';
 
 class NewsItem extends StatelessWidget {
   final String date;
@@ -13,14 +12,14 @@ class NewsItem extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, '/innernews');
       },
-      child: Container(
+      child: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               date,
-              style: const TextStyle(fontSize: 12, color: gray2),
+              style: kTextStyle12.copyWith(color: gray2),
             ),
             const Padding(padding: EdgeInsets.only(top: 12)),
             Text(

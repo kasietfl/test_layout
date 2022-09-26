@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/styles/colors.dart';
-
-import '../styles/text_styles.dart';
+import 'package:test_layout/imports.dart';
 
 class CustomButton extends StatelessWidget {
   final bool enabled;

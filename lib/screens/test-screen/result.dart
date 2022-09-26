@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/styles/text_styles.dart';
-import 'package:test_layout/widgets/custom_button.dart';
-import 'package:test_layout/styles/colors.dart';
-import 'package:test_layout/screens/test-screen/result_dialog.dart';
+import 'package:test_layout/imports.dart';
 
 class Result extends StatelessWidget {
   const Result({Key? key}) : super(key: key);
@@ -31,9 +28,9 @@ class Result extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     'Правильных:',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+                    style: kTextStyle14.copyWith(fontWeight: FontWeight.w700),
                   ),
                   Text(
                     '50',

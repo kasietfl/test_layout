@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/styles/colors.dart';
-import 'package:test_layout/styles/text_styles.dart';
-import 'package:test_layout/widgets/custom_button.dart';
+import 'package:test_layout/imports.dart';
 
 class InnerTest extends StatefulWidget {
   const InnerTest({Key? key}) : super(key: key);
@@ -27,14 +25,14 @@ class _InnerTestState extends State<InnerTest> {
         appBar: AppBar(
           title: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               Text(
                 'Вопрос: 4 из 13',
-                style: TextStyle(fontSize: 12, color: gray3),
+                style: kTextStyle12.copyWith(color: gray3),
               ),
-              Text(
+              const Text(
                 'Онлайн-тест: топические ГКС',
-                style: TextStyle(fontSize: 14),
+                style: kTextStyle14,
               )
             ],
           ),

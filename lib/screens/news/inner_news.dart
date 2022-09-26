@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/styles/colors.dart';
-import 'package:test_layout/styles/text_styles.dart';
+import 'package:test_layout/imports.dart';
 
 class InnerNews extends StatefulWidget {
   const InnerNews({super.key});
@@ -28,9 +27,8 @@ class _InnerNewsState extends State<InnerNews> {
               child: ListView(children: [
                 Text(
                   '19 сентября'.toUpperCase(),
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: Color(0xff838795),
+                  style: kTextStyle14.copyWith(
+                    color: gray3,
                   ),
                 ),
                 const Text('В России фармрынок увеличился за полгода на 9%',
@@ -45,9 +43,9 @@ class _InnerNewsState extends State<InnerNews> {
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
+                Text(
                   'По итогам первого полугодия 2021 3 года емкость фармацевтического рынка в России составила 1094 млрд рублей, что на 9% больше, чем за аналогичный период 2020 года. Об этом говорится в исследовании аудитора фармацевтического рынка DSM Group, которое поступило «Известиям» в пятницу, 27 августа.',
-                  style: TextStyle(fontSize: 15, height: 1.6),
+                  style: kTextStyle15.copyWith(height: 1.6),
                 ),
               ]),
             ),

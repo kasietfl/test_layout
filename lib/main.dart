@@ -1,20 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:test_layout/styles/colors.dart';
-
-import 'package:test_layout/screens/sales/sales.dart';
-import 'package:test_layout/screens/news/news.dart';
-import 'package:test_layout/screens/base/base.dart';
-import 'package:test_layout/screens/test-screen/tests.dart';
-import 'package:test_layout/screens/video-lessons/video_lessons.dart';
-import 'package:test_layout/screens/news/inner_news.dart';
-import 'package:test_layout/screens/test-screen/inner_test.dart';
-import 'package:test_layout/screens/test-screen/result.dart';
+import 'package:test_layout/imports.dart';
 
 void main() {
   runApp(MaterialApp(
-      theme: ThemeData(
-          fontFamily: 'NotoSans', backgroundColor: const Color(0xffffffff)),
+      theme: ThemeData(fontFamily: 'NotoSans', backgroundColor: white),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
@@ -50,8 +40,8 @@ class _MainState extends State<Main> {
         iconSize: 24,
         selectedItemColor: green,
         unselectedItemColor: gray4,
-        unselectedLabelStyle: const TextStyle(fontSize: 12),
-        selectedLabelStyle: const TextStyle(fontSize: 12),
+        unselectedLabelStyle: kTextStyle12,
+        selectedLabelStyle: kTextStyle12,
         showUnselectedLabels: true,
         elevation: 5,
         items: <BottomNavigationBarItem>[
