@@ -18,11 +18,10 @@ class BaseItem extends StatelessWidget {
       onTap: () => Navigator.pushNamed(context, '/$section'),
       child: Container(
         width: double.infinity,
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 30),
             SvgPicture.asset('assets/svg/$image.svg'),
             const SizedBox(height: 10),
             Text(

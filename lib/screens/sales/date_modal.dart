@@ -95,7 +95,10 @@ class _DateModalState extends State<DateModal> {
               ],
             ),
             const Spacer(),
-            CustomButton(buttonText: 'Отмена', enabled: false, function: () {}),
+            CustomButton(
+                buttonText: 'Отмена',
+                enabled: false,
+                function: () => Navigator.pop(context)),
             const SizedBox(
               height: 9,
             )

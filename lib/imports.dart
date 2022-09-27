@@ -25,3 +25,4 @@ export 'package:test_layout/screens/test-screen/result_dialog.dart';
 export 'package:test_layout/screens/test-screen/tests.dart';
 export 'package:test_layout/screens/test-screen/test_item.dart';
 export 'package:test_layout/screens/test-screen/test_dialog.dart';
+export 'package:test_layout/screens/profile.dart';

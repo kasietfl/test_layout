@@ -21,6 +21,7 @@ class _SalesState extends State<Sales> {
     'Анальгин-ЭкстраКап',
     'Артрозан'
   ];
+  final String day = 'Сегодня';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +55,7 @@ class _SalesState extends State<Sales> {
                       child: Row(
                         children: [
                           Text(
-                            'Сегодня',
+                            day,
                             style: kTextStyle16.copyWith(
                                 fontWeight: FontWeight.w600, color: green),
                           ),

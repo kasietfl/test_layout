@@ -14,7 +14,8 @@ class _ProductModalState extends State<ProductModal> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: MediaQuery.of(context).size.height * 0.55,
+        height: 458,
+        // MediaQuery.of(context).size.height * 0.55
         child: Column(
           children: [
             Align(
@@ -41,7 +42,7 @@ class _ProductModalState extends State<ProductModal> {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(
-                    height: 40,
+                    height: 36,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,9 +50,11 @@ class _ProductModalState extends State<ProductModal> {
                       RoundButton(
                           icon: Icons.remove,
                           counter: () {
-                            setState(() {
-                              count--;
-                            });
+                            if (count > 0) {
+                              setState(() {
+                                count--;
+                              });
+                            }
                           }),
                       Container(
                         padding: const EdgeInsets.symmetric(

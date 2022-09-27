@@ -10,6 +10,7 @@ class ResultDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 460,
+      width: 375,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

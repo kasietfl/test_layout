@@ -27,7 +27,7 @@ class Main extends StatefulWidget {
 
 class _MainState extends State<Main> {
   int currentIndex = 0;
-  final screens = [const Sales(), const News(), const Base(), const Tests()];
+  final screens = [const Sales(), const News(), const Base(), const Profile()];
 
   @override
   Widget build(BuildContext context) {

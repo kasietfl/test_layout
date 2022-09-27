@@ -12,7 +12,12 @@ class NewsItem extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, '/innernews');
       },
-      child: Padding(
+      child: Container(
+        decoration: const BoxDecoration(
+            border: Border(
+                bottom: BorderSide(
+          color: lightGray2,
+        ))),
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -35,6 +35,7 @@ class _NewsState extends State<News> {
           children: [
             const Divider(
               color: lightGray2,
+              height: 1,
               thickness: 1,
             ),
             Expanded(
