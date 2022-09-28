@@ -54,6 +54,7 @@ class _DateModalState extends State<DateModal> {
                           setState(() {
                             days[index].enabled = true;
                           });
+                          Navigator.pop(context, days[index].text);
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,

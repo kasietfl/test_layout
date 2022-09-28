@@ -9,6 +9,7 @@ class Sales extends StatefulWidget {
 }
 
 class _SalesState extends State<Sales> {
+  String day = 'Сегодня';
   List<String> products = [
     'Аскорбиновая кислота',
     'Азитромицин',
@@ -21,7 +22,7 @@ class _SalesState extends State<Sales> {
     'Анальгин-ЭкстраКап',
     'Артрозан'
   ];
-  final String day = 'Сегодня';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +43,7 @@ class _SalesState extends State<Sales> {
                     ),
                     InkWell(
                       onTap: (() => {
-                            showModalBottomSheet<void>(
+                            showModalBottomSheet(
                                 shape: const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.vertical(
                                         top: Radius.circular(16.0))),
@@ -50,7 +51,11 @@ class _SalesState extends State<Sales> {
                                 context: context,
                                 builder: (BuildContext context) {
                                   return const DateModal();
-                                }),
+                                }).then((value) {
+                              setState(() {
+                                day = value;
+                              });
+                            }),
                           }),
                       child: Row(
                         children: [
